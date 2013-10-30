@@ -975,7 +975,7 @@ This is a list of all the values from the <code><b><?php echo realpath($ini_file
 
   // keys ?
   //
-  if ($_is_object) {
+  if ($_is_object && get_class($data) != 'stdClass') {
     $refl = new ReflectionClass($data);
     foreach ($refl->getProperties() as $property) {
       $k = $property->getName();
